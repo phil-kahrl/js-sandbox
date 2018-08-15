@@ -1,0 +1,27 @@
+{
+  "name": "js-sandbox",
+  "version": "1.0.0",
+  "description": "JavaScript examples for instructional purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phil-kahrl/js-sandbox.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Node.js",
+    "learning"
+  ],
+  "author": "Phil Kahrl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phil-kahrl/js-sandbox/issues"
+  },
+  "homepage": "https://github.com/phil-kahrl/js-sandbox#readme",
+  "dependencies": {
+    "aws-sdk": "^2.293.0"
+  }
+}
