@@ -9,6 +9,7 @@ const listObjects = (
                         resultList, // This is the list of combined results from all calls.
                         NextContinuationToken // Tells S3 to get the next page of results.
     ) => {
+    console.log('list object called, NextContinuationToken = ' + NextContinuationToken)
     return new Promise( (resolve, reject) => {  // This function will return a Promise
         list = resultList ? resultList : [] // initialize an empty result list if one is not passed in.
         const params = {
@@ -26,6 +27,7 @@ const listObjects = (
                 if(data.IsTruncated) {
                     // if the data is truncated then call this function recursively
                     listObjects(list, data.NextContinuationToken).then( (list) => {
+                        console.log('resolving for NextContinuationToken ' + data.NextContinuationToken)
                         resolve(list)
                     })
                 } else {
@@ -33,6 +35,7 @@ const listObjects = (
                         The termination condition for the recursion has been met,
                         (There are no more pages left in the bucket) so we resolve here.
                      */
+                    console.log('done, resolving final result')
                     resolve(list)
                 }
             }
